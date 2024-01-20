@@ -1,4 +1,4 @@
-# Pay attention to how to use deque to create a queue and the function of deque.
+# Pay attention to how to use deque to create a queue and the function of deque
 class MyStack:
 
     def __init__(self):
