@@ -21,9 +21,18 @@
           return [ string for string, count in sort_dic]  
   ```
 
-  
 
-- 
+## Math
+
+### Trunc
+
+返回x 截断整数的部分,即返回整数部分,忽略小数部分。
+
+```python
+math.trunc(x/10)
+```
+
+
 
 # 包
 
