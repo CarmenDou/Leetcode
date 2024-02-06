@@ -1,25 +1,36 @@
 # Definition for a binary tree node.
-# class TreeNode:
+# class TreeNode(object):
 #     def __init__(self, val=0, left=None, right=None):
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:
-    def findSecondMinimumValue(self, root: Optional[TreeNode]) -> int:
-    #     self.min = [root.val,root.val]
-        
-    #     self.helper(root)
-    #     return self.min[-1] if self.min[0] != self.min[1] else -1
+from collections import defaultdict
+class Solution(object):
+    def findSecondMinimumValue(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        if not root:
+            return -1
+        else:
+            self.first_min = root.val
+            self.second_min = float('inf')
+            self.searchTree(root)
 
-    # def helper(self,root):
-    #     if not root:
-    #         return
-                
-    #     if (self.min[0] == self.min[1]) or (self.min[-1] > root.val and self.min[0] != root.val):
-    #         self.min[-1] = root.val
-    #     self.helper(root.left)
-    #     self.helper(root.right) 
-    #     
+        return self.second_min if self.second_min != float('inf') else -1
+
+    def searchTree(self,root):
+        if not root:
+            return
+        
+        if self.first_min != root.val and self.second_min > root.val:
+            self.second_min = root.val
+
+        self.searchTree(root.left)
+        self.searchTree(root.right)
+    
+### 广度搜索用队列    
 
     if not root:
         return -1
