@@ -65,3 +65,20 @@ math.trunc(x/10)
       d[k].add(v)
   print(d)
   ```
+
+# 用法
+
+## BFS
+
+Deque可以用元祖存每层的值和层级，比如：
+
+```python
+queue = deque([(root,0)])
+while queue:
+  node, depth = queue.popleft()
+  if node.left:
+    queue.append((node.left,depth+1))
+ 	if node.right:
+    queue.append((node.right,depth+1))
+```
+
