@@ -66,6 +66,52 @@ math.trunc(x/10)
   print(d)
   ```
 
+## Heapq
+
+heapq默认是最小顶堆
+
+1. Heappush(heap,n)数据堆入
+
+   ```python
+   import heapq
+   array = [10,17,50,7,30,24,27,45,15,5,36,21]
+   heap = []
+   for num in array:
+     heapq.heappush(heap, num)
+   print("array", array)
+   print("heap:", heap)
+   
+   array: [10,17,50,7,30,24,27,45,15,5,36,21]
+   heap: [5,7,21,15,10,24,27,45,17,30,36,50]
+   ```
+
+2.  Heappop(heap)将数组堆中的最小元素弹出
+
+   ```python
+   heapq.heappop(heap)
+   5
+   ```
+
+3.  
+
+4. 
+
+```python
+import heapq
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        heap=[]
+        
+        for num in nums:
+            heapq.heappush(heap, num)
+            if len(heap)>k:
+                heapq.heappop(heap)
+                
+        return heapq.heappop(heap)
+```
+
+
+
 # 用法
 
 ## BFS
@@ -82,3 +128,20 @@ while queue:
     queue.append((node.right,depth+1))
 ```
 
+# 排序
+
+## 堆排序
+
+堆结构：首先必须满足完全二叉树的定义，每个结点的值都大于或者等于左右孩子结点的值，称为大顶堆，注意没有要求节点的左孩子的值和右孩子的值的大小关系；相反每个结点的值都小于或者等于其左右孩子结点的值，称为小顶堆。
+
+大顶堆特点：arr[i] >= arr[2*i+1] && arr[i] >= arr[2*i+2]
+
+小顶堆特点：arr[i] <= arr[2*i+1] && arr[i] <= arr[2*i+2]
+
+一般升序采用大顶堆，降序采用小顶堆
+
+时间复杂度：O(nlogn)
+
+基本思想：将带排序序列构造成一个大顶堆，这个时候整个序列的最大值就是堆顶的根结点；然后将其与末尾元素交换，此时末尾就是最大值，这部分是有序区。
+
+然后将剩下的n-1个元素重新构造成一个堆，重复执行就能过的到一个有序序列。
