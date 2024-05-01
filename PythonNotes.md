@@ -1,5 +1,15 @@
 
 
+# 数据结构
+
+## 字典
+
+- dict.keys()和dict.values()
+
+  得到key的数组或者value的数组
+
+## 列表
+
 # 函数
 
 ## 排序
@@ -23,6 +33,17 @@
           return [ string for string, count in sort_dic]  
   ```
 
+- str类型的sorted
+
+  排序后是数组
+
+  ```python
+  str = "123"
+  print(sorted(str))
+  #[1,2,3]
+  ```
+
+  
 
 ## Math 
 
