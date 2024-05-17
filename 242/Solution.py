@@ -6,19 +6,21 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        dic_s = Counter(s)
-        i = 0 
+        # Solution1
+        list_s = sorted(s)
+        list_t = sorted(t)
+        return list_s == list_t
+
+
+        # Solution2
         if len(s) != len(t):
             return False
+        
+        countS, countT = defaultdict(int), defaultdict(int)
+        for i in range(len(s)):
+            countS[s[i]] += 1
+            countT[t[i]] += 1
+        return countS == countT
 
-        while i < len(t):
-            if t[i] not in dic_s:
-                return False
-            else:
-                dic_s[t[i]] -= 1
-                if dic_s[t[i]] < 0:
-                    return False
-            i += 1
-        
-        return True
-        
+        # Or we can just use built-in function Counter
+        return Counter(s) == Counter(t)
