@@ -1,37 +1,21 @@
 from collections import defaultdict
-class Solution(object):
-    def groupAnagrams(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: List[List[str]]
-        """
-        # res = []
-        # aux = []
-        # for str in strs:
-        #     d = defaultdict(int)
-        #     for k in str:
-	    #         d[k] += 1
-        #     sorted(d.items(),key = lambda x : x[0])
-        #     flag = False
-        #     for i in range(len(aux)):
-        #         if aux[i] == d:
-        #             res[i].append(str)
-        #             flag = True
-        #             break
-        #     if not flag:
-        #         aux.append(d)
-        #         res.append([str])
-        # return res
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        # Solution 2
+        dic = defaultdict(list)
+        for s in strs:
+            dic["".join(sorted(s))].append(s)
 
-        res = {}
-        for word in strs:
-            k = "".join(sorted(word))
-            if k not in res:
-                res[k] = []
-            res[k].append(word)
-        return (res.values())
+        return dic.values()
 
-        
+        # Solution 1
+        res = defaultdict(list)
+        for s in strs:
+            count = [0] * 26
 
-                
-                
+            for c in s:
+                count[ord(c) - ord("a")] += 1
+
+            res[tuple(count)].append(s)
+
+        return res.values()
