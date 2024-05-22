@@ -198,7 +198,7 @@ while queue:
 
 然后将剩下的n-1个元素重新构造成一个堆，重复执行就能过的到一个有序序列。
 
-# Github提交步骤
+# Github
 
 1. 提交步骤
 
@@ -206,6 +206,16 @@ while queue:
    git add .
    git commit -m $(date +%F) 
    git push origin master
+   ```
+
+
+2. 如果文件夹有白色箭头，文件提交不上去怎么处理。
+
+   ```
+   删除project文件夹里面的.git文件
+   在project目录下进行如下操作:
+   执行git rm --cached
+   再执行（1）
    ```
 
    
