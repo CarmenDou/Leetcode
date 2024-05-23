@@ -13,6 +13,27 @@
 - remove方法可以移除元素
 - sort方法是对List本身排序，所以返回值为Null
 
+## 字符串
+
+- 判断字符串是否只有字母和数字（详见Leetcode 125）
+
+  - built-in function
+
+    ```python
+    s.isalnum()
+    ```
+
+  - 正则表达式
+
+    ```python
+    # re.sub() 用于替换字符串中与正则表达式模式匹配的子字符串
+    pattern = r'[^a-zA-Z0-9]'
+    # 把非数字和字母的字符都替换掉
+    s = re.sub(pattern, '', s) 
+    ```
+
+- 
+
 # 函数
 
 ## 排序
