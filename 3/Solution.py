@@ -4,6 +4,17 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
+        # Sliding window
+        charSet = set()
+        l, res = 0, 0
+        for r in range(len(s)):
+            while s[r] in charSet:
+                charSet.remove(s[l])
+                l += 1
+            charSet.add(s[r])
+            res = max(res, r-l+1)
+        return res
+
         # myway is use a dic to store last index of this character and when this character appears again, I will know my new substr
         dic_char = {}
         max_count = 0

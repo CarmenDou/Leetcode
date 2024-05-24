@@ -1,5 +1,20 @@
 #Leetcode
-#贪心算法
+#Two pointer
+class Solution(object):
+    def maxProfit(self, prices):
+        l, r = 0,1 # left = buy, right = sell
+        maxP = 0
+        while r < len(prices):
+            if prices[l] < prices[r]:
+                profit = prices[r] - prices[l]
+                maxP = max(profit,maxP)
+            else:
+                l = r
+            r += 1
+        return maxP
+        
+
+#Greedy
 #use two variables, one for minimum price before judging position, one for maximum profit
 class Solution(object):
     def maxProfit(self, prices):
