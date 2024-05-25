@@ -22,3 +22,12 @@ class Solution(object):
             ccur = head.next
 
         return tail
+
+        # iterative, easier to understand
+        pre, curr = None, head
+        while curr:
+            nxt = curr.next
+            curr.next = pre
+            pre = curr
+            curr = nxt
+        return pre
