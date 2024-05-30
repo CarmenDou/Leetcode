@@ -6,4 +6,4 @@
 
 - DFS
 
-  ![Image1](https://github.com/CarmenDou/Leetcode/tree/master/297/Image1.jpg)
+  ![Image1](https://github.com/CarmenDou/Leetcode/blob/master/297/Image1.jpg )
