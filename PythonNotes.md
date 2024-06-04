@@ -32,7 +32,12 @@
     s = re.sub(pattern, '', s) 
     ```
 
-- 
+-  
+
+## Trie
+
+- TreeNode
+- Reference: Leetcode 208
 
 # 函数
 
