@@ -145,7 +145,7 @@ math.trunc(x/10)
 
 ## Heapq
 
-heapq默认是最小顶堆
+heapq默认是最小顶堆，如果想要大顶堆的话可以取负数。
 
 1. Heappush(heap,n)数据堆入
 
@@ -155,6 +155,7 @@ heapq默认是最小顶堆
    heap = []
    for num in array:
      heapq.heappush(heap, num)
+   # heapq.heapify(heap)
    print("array", array)
    print("heap:", heap)
    
