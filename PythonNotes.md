@@ -202,6 +202,15 @@ for i in range(n):
 math.trunc(x/10)
 ```
 
+### 最大公约数
+
+```python3
+def gcd(x, y):
+  while y:
+    x, y = y, x % y
+  return x
+```
+
 
 
 # 包
