@@ -81,6 +81,13 @@
 
 ### Bellman-ford
 
+## Bit
+
+### Bitmask
+
+- We can use bitmask to represent whether the character in the string is chosen
+- Reference to: Leetcode 2002
+
 # 函数
 
 ## 排序
