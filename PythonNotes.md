@@ -134,6 +134,13 @@ for i in range(n):
           intervals.sort(key = lambda i : i.start)
   ```
 
+  ```
+  cmp_to_key通过使用比较函数来定义排序逻辑，而无需重写为关键字函数。
+  -1 的含义是指第一个参数应该排在第二个参数之前
+  1  的含义是指第二个参数应该排在第一个参数之前
+  参考lc179
+  ```
+
   
 
 - str类型的sorted
