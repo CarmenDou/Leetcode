@@ -386,4 +386,21 @@ while queue:
    再执行（1）
    ```
 
-   
+
+# 刷题分类
+
+## Sliding window
+
+- Remove the character at the start of the string s and append it to the end of the string. Usually, s * 2 and use the sliding window.
+
+  ```
+  lc 1888
+  ```
+
+- Set up two pointers l and r, if sum > target, then l+1, else r+1. O(n^2) reduces to O(n)
+
+  ```
+  lc 1658
+  ```
+
+  
