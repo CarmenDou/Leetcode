@@ -397,10 +397,29 @@ while queue:
   lc 1888
   ```
 
-- Set up two pointers l and r, if sum > target, then l+1, else r+1. O(n^2) reduces to O(n)
+- Set up two pointers l and r, while sum > target, then l+1, else r+1. O(n^2) reduces to O(n)
 
   ```
   lc 1658
+  ```
+
+
+- Example code
+
+  ```python
+  class Solution:
+      def equalSubstring(self, s: str, t: str, maxCost: int) -> int:
+          l, r = 0, 0
+          res, curCost = 0, 0
+          for r in range(len(s)):
+              curCost += abs(ord(s[r])-ord(t[r]))
+              while curCost > maxCost:
+                  curCost -= abs(ord(s[l])-ord(t[l]))
+                  l += 1
+              res = max(res, r-l+1)
+          return res
+  
+  lc 1208
   ```
 
   
