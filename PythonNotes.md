@@ -422,4 +422,9 @@ while queue:
   lc 1208
   ```
 
-  
+
+## Search Binary
+
+- 搜索空间，有时候是数组显而易见，有时候是restriction范围。
+  - Example: lc 2616
+- 
