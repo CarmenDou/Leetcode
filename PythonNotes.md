@@ -366,6 +366,17 @@ while queue:
 
 然后将剩下的n-1个元素重新构造成一个堆，重复执行就能过的到一个有序序列。
 
+```python
+##常用代码
+##最小堆栈化heap
+heapq.heapify(heap)
+##弹出当前最小值
+heapq.heappop(heap)
+##python默认最小堆栈，如果想要大堆栈就存负数
+```
+
+
+
 # Github
 
 1. 提交步骤
